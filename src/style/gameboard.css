@@ -1,0 +1,24 @@
+.game {
+    display: grid;
+    grid-template-columns: repeat(2, 200px);
+    grid-template-rows: 1fr;
+    justify-content: center;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(2, 50px);
+    grid-template-rows: repeat(2, 50px);
+}
+
+.square {
+    outline: none;
+
+    display: block;
+
+    background-color: aquamarine;
+}
+
+.square:hover {
+    background-color: aqua;
+}

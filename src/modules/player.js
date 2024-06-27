@@ -10,5 +10,10 @@ export default function Player(type) {
     attributeFilter: ['disabled'],
   };
 
-  return { type, score, gameboard, observer, observerConfig };
+  const getScore = () => score;
+  const increaseScore = () => {
+    score += 1;
+  };
+
+  return { type, gameboard, observer, observerConfig, getScore, increaseScore };
 }

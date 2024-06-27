@@ -1,4 +1,5 @@
 import createDomBoard from './dom-gameboard';
+import updateScoreBoard from './dom-menu';
 import pcPlays from './pc-ai';
 
 let PC_AI;
@@ -37,7 +38,8 @@ function endGame(players, winningPlayer) {
   players.forEach((player) => player.observer.disconnect());
   document.querySelector('.game').setAttribute('disabled', '');
 
-  alert(`game-driver.js endGame, player${players[winningPlayer].type} won!`);
+  players[winningPlayer].increaseScore();
+  updateScoreBoard(players);
 }
 
 function gameTurn(players, playerIndex, hitShip) {
@@ -72,6 +74,7 @@ function setObservers(players) {
 }
 
 export default function initializeGame(player1, player2) {
+  updateScoreBoard([player1, player2]);
   document.querySelector('.game').removeAttribute('disabled', '');
 
   setBoard(player1, player2);

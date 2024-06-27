@@ -1,5 +1,5 @@
 export default function createDomBoard(gameboard) {
-  const SIZE = 2;
+  const SIZE = 10;
 
   const boardContainer = document.createElement('div');
   boardContainer.className = 'board';
@@ -9,11 +9,11 @@ export default function createDomBoard(gameboard) {
       const square = document.createElement('button');
       square.className = 'square';
       square.addEventListener('click', () => {
-        gameboard.receiveAttack(i, j);
+        const shipHit = gameboard.receiveAttack(i, j);
         square.classList.add('hit');
         square.setAttribute('disabled', '');
 
-        if (gameboard.isGameOver()) alert('on dom-gameboard.js, end!');
+        if (shipHit) square.textContent = 'X';
       });
 
       boardContainer.appendChild(square);

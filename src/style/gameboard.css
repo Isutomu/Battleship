@@ -1,14 +1,14 @@
 .game {
     display: grid;
-    grid-template-columns: repeat(2, 200px);
+    grid-template-columns: repeat(2, 500px);
     grid-template-rows: 1fr;
     justify-content: center;
 }
 
 .board {
     display: grid;
-    grid-template-columns: repeat(2, 50px);
-    grid-template-rows: repeat(2, 50px);
+    grid-template-columns: repeat(10, 40px);
+    grid-template-rows: repeat(10, 40px);
 }
 
 .square {
@@ -21,4 +21,10 @@
 
 .square:hover {
     background-color: aqua;
+}
+
+.square:disabled {
+    background-color: gray;
+    color: red;
+    font-weight: bold;
 }
